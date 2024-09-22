@@ -23,3 +23,21 @@ def play(filename):
 
 openai.api_key = keys.key['OPENAI_API_KEY']
 filename = 'query.mp3
+
+def Gspeak():
+    speak('Hello, how can I help you?', filename)
+    play(filename)
+    query = SpeechRec.record()
+    response = callOpenai(query)
+    speak(response, filename)
+    play(filename)
+
+    if query != "quit"
+        Gspeak("I think you said" + str(query) + "but I am not sure")
+        response = callOpenai.openai_create(query)
+        Gspeak(response)
+        Gspeak("Do you have any other questions?")
+
+    else:
+        sucess = False
+        Gspeak("Goodbye, have a nice day")
